@@ -1,27 +1,28 @@
 #include<iostream>
 using namespace std;
-int largest_Element(int array[],int size){
+int largestElement(int array[],int size){
     int max=INT16_MIN;
-    int maxIndex=-1;
+    int maxindex=-1;
     for(int i=0;i<size;i++){
         if(array[i]>max){
-           max=array[i];
-           maxIndex=i;
+            max=array[i];
+            maxindex=i;
         }
     }
-    return maxIndex;
+    return maxindex;
 }
 int main(){
-    int array[]={1,2,4,5,9,3,9,9};
-    int arraySize=8;
-    int largestElement=largest_Element(array,8);
-    array[largestElement]=-1;
-    for(int i=0;i<arraySize;i++){
-        if(array[i]==largestElement){
-            array[i]==0;
+    int array[]={13,99,99,5,6};
+    int size=5;
+    int largestElemenIndex=largestElement(array,5);
+    //array[largestElemenIndex]=-1;
+    int larger=array[largestElemenIndex];
+    for(int i=0;i<size;i++){
+        if(array[i]==larger){
+            array[i]=-1;
         }
     }
-    int secont_Lergest_element=largest_Element(array,5);
-    cout<<array[secont_Lergest_element]<<endl;
+    int second_largest_element=largestElement(array,5);
+    cout<<array[second_largest_element]<<endl;
     return 0;
 }
